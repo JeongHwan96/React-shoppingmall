@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from "react-router-dom";
+import button from "./components/button";
+import home from "./page/home";
+import product from "./page/product";
+import product_detail from "./page/product_detail";
+import shopping_cart from "./page/shopping_cart";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter> 
+      <Route path="/" exact component={home} />
+      <Route path="/product_detail" component={product_detail} />
+      <Route path="/shopping_cart" component={shopping_cart} />
+      <Route path="/button" component={button} />
+      <Route path="/product" component={product} />
+    </BrowserRouter>
   );
 }
-
 export default App;
+
+{/* <Route path="/" exact component={} /> 이 방식은 현재 react-router-dom 이 최신 버전(6.x.x)으로 업데이트 되어 사용시 에러가 나타남 그래서 이전 버전으로 받아서 사용함 */}
