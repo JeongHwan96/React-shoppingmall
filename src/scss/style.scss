@@ -1,0 +1,158 @@
+* {
+  list-style: none;
+}
+
+h2 {
+  font-family: Noto Sans CJK KR;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px !important;
+  line-height: 26px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+h3 {
+  font-family: Noto Sans CJK KR;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px !important;
+  line-height: 21px;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.container {
+  position: relative;
+  height: 1000px;
+
+  .header-title {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .header-contents {
+    display: flex;
+    margin-top: 5%;
+  }
+  .winter {
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 60%;
+    padding: 6%;
+    margin-left: 15px;
+    margin-top: 40px;
+  }
+  .main_product,
+  .main_product1 {
+    .exam {
+      position: absolute;
+      width: 38%;
+      top: 30%;
+      left: 0;
+    }
+    .exam1 {
+      position: absolute;
+      width: 38%;
+      top: 30%;
+      right: 7%;
+    }
+
+    .product_desc {
+      position: absolute;
+      left: 0%;
+      right: 27.11%;
+      top: 64.09%;
+      bottom: 17.23%;
+    }
+    .product_desc1 {
+      position: absolute;
+      left: 55.11%;
+      right: 0;
+      top: 64.09%;
+      bottom: 17.23%;
+    }
+  }
+
+  .review {
+    display: flex;
+    transform: translate(76%, 1100%);
+  }
+
+  // product_detail
+  .header-title1 {
+    text-align: center;
+    font-size: 2rem;
+  }
+
+  .image {
+    .exam2 {
+      position: absolute;
+      width: 38%;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -40%);
+    }
+    .image_desc {
+      position: absolute;
+      top: 60%;
+      left: 50%;
+      transform: translate(-90%, 60%);
+    }
+  }
+  .product_explanation_img {
+    width: 40%;
+    .exam3 {
+      width: 97%;
+      transform: translate(79%, 120%);
+    }
+    .exam4 {
+      width: 97%;
+      transform: translate(79%, 620%);
+    }
+  }
+  .Home {
+    position: absolute;
+    left: 31%;
+    top: 1%;
+    cursor: pointer;
+    color: black;
+  }
+  .active {
+    background-color: #eee;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 821px) {
+  .header {
+    width: 136%;
+  }
+  .winter {
+    width: 140% !important;
+    padding: 11% !important;
+  }
+  .header-title {
+    padding-bottom: 3%;
+    border-bottom: 2px solid #eee;
+  }
+  .exam {
+    width: 80% !important;
+    top: 30% !important;
+    left: 10% !important;
+  }
+  .product_desc {
+    position: absolute !important;
+    left: 10% !important;
+    right: 27.11% !important;
+    top: 54.09% !important;
+    bottom: 17.23% !important;
+    width: 80% !important;
+  }
+  h2 {
+    font-size: 17px !important;
+    font-weight: 700 !important;
+  }
+  h3 {
+    font-size: 15px !important;
+  }
+}
