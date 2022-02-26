@@ -17,7 +17,15 @@ const Home = () => {
     margin-top: 40px;
   `;
   const [showItem, setShowItem] = useState(false);
-  const [showItem2, setShowItem2] = useState(false);
+  const [showItem2, setShowItem2] = useState();
+  const setShowItemFalse = () => {
+    setShowItem(false);
+    setShowItem2(false);
+  };
+  const setShowItemTrue = () => {
+    setShowItem(true);
+    setShowItem2(true);
+  };
 
   return (
     <div className="container">
@@ -33,33 +41,41 @@ const Home = () => {
             <SwiperSlide>
               <ListButton
                 className={`${showItem ? "" : "active"} `}
-                onClick={() => setShowItem(false)}
+               
+                onClick={() => {
+                  setShowItemFalse();
+                }}
+              >
+                # 겨울 방한템1
+              </ListButton>
+            </SwiperSlide>
+
+            <SwiperSlide>
+              <ListButton
+             className={`${showItem ? "active" : ""} `}
+                onClick={() => {
+                  setShowItemTrue();
+                }}
               >
                 # 겨울 방한템2
               </ListButton>
             </SwiperSlide>
             <SwiperSlide>
               <ListButton
-                className={`${showItem ? "active" : ""} `}
-                onClick={() => setShowItem(true)}
+                onClick={() => {
+                  setShowItemFalse();
+                }}
               >
-                # 겨울 방한템2
+                # 겨울 방한템3
               </ListButton>
             </SwiperSlide>
             <SwiperSlide>
               <ListButton
-                className={`${showItem2 ? "" : "active"} `}
-                onClick={() => setShowItem2(false)}
+                onClick={() => {
+                  setShowItemTrue();
+                }}
               >
-                # 겨울 방한템2
-              </ListButton>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ListButton
-                className={`${showItem2 ? "active" : ""} `}
-                onClick={() => setShowItem2(true)}
-              >
-                # 겨울 방한템2
+                # 겨울 방한템4
               </ListButton>
             </SwiperSlide>
             <SwiperSlide>
@@ -72,27 +88,14 @@ const Home = () => {
         </Swiper>
       </div>
 
-      <div className="main_product">
-        <Link to="/product_detail">
-          <img className="exam" src={exam} alt="예시" />
-        </Link>
-        <div className="product_desc">
-          <h2>
-            <b>인증샷을 부르는 춘식이 유리컵1</b>
-          </h2>
-          <h3>
-            안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운 춘식이를
-            더한 , 금주의 추천 선물이에요
-          </h3>
-        </div>
-
-        <div className="main_product1">
+      {showItem ? (
+        <div className="main_product">
           <Link to="/product_detail">
-            <img className="exam1" src={exam} alt="예시" />
+            <img className="exam" src={exam} alt="예시" />
           </Link>
-          <div className="product_desc1">
+          <div className="product_desc">
             <h2>
-              <b>인증샷을 부르는 춘식이 유리컵1-1</b>
+              <b>인증샷을 부르는 춘식이 유리컵1</b>
             </h2>
             <h3>
               안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운 춘식이를
@@ -100,7 +103,88 @@ const Home = () => {
             </h3>
           </div>
         </div>
-      </div>
+      ) : (
+        <>
+          <div className="main_product">
+            <Link to="/product_detail">
+              <img className="exam" src={exam} alt="예시" />
+            </Link>
+            <div className="product_desc">
+              <h2>
+                <b>인증샷을 부르는 춘식이 유리컵1</b>
+              </h2>
+              <h3>
+                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
+                춘식이를 더한 , 금주의 추천 선물이에요
+              </h3>
+            </div>
+          </div>
+
+          <div className="main_product1">
+            <Link to="/product_detail">
+              <img className="exam1" src={exam} alt="예시" />
+            </Link>
+            <div className="product_desc1">
+              <h2>
+                <b>인증샷을 부르는 춘식이 유리컵1-1</b>
+              </h2>
+              <h3>
+                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
+                춘식이를 더한 , 금주의 추천 선물이에요
+              </h3>
+            </div>
+          </div>
+        </>
+      )}
+
+      {showItem2 ? (
+        <div className="main_product">
+          <Link to="/product_detail">
+            <img className="exam" src={exam} alt="예시" />
+          </Link>
+          <div className="product_desc">
+            <h2>
+              <b>인증샷을 부르는 춘식이 유리컵1</b>
+            </h2>
+            <h3>
+              안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운 춘식이를
+              더한 , 금주의 추천 선물이에요
+            </h3>
+          </div>
+        </div>
+      ) : (
+        <>
+          <div className="main_product">
+            <Link to="/product_detail">
+              <img className="exam" src={exam} alt="예시" />
+            </Link>
+            <div className="product_desc">
+              <h2>
+                <b>인증샷을 부르는 춘식이 유리컵1</b>
+              </h2>
+              <h3>
+                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
+                춘식이를 더한 , 금주의 추천 선물이에요
+              </h3>
+            </div>
+          </div>
+
+          <div className="main_product1">
+            <Link to="/product_detail">
+              <img className="exam1" src={exam} alt="예시" />
+            </Link>
+            <div className="product_desc1">
+              <h2>
+                <b>인증샷을 부르는 춘식이 유리컵1-1</b>
+              </h2>
+              <h3>
+                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
+                춘식이를 더한 , 금주의 추천 선물이에요
+              </h3>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };

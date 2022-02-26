@@ -1,18 +1,19 @@
 import { BrowserRouter, Route } from "react-router-dom";
-import button from "./components/button";
 import Home from "./page/Home";
 import product from "./page/product";
 import product_detail from "./page/ProductDetail";
 import shopping_cart from "./page/shopping_cart";
-
+import modal from "./components/modal";
+import Data from "./data/Data";
 function App() {
   return (
     <BrowserRouter basename="comento_shoppingmall">
       <Route path="/" exact component={Home} />
       <Route path="/product_detail" component={product_detail} />
       <Route path="/shopping_cart" component={shopping_cart} />
-      <Route path="/button" component={button} />
+      <Route path="/modal" component={modal} />
       <Route path="/product" component={product} />
+      <Route path="/data" component={Data} />
     </BrowserRouter>
   );
 }

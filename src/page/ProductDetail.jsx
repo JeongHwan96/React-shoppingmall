@@ -1,12 +1,14 @@
 import exam2 from "./exam2.png";
+import Home from "./Home";
 import product_explanation from "./water.png";
 import product_explanation1 from "./water_desc.png";
 import Review from "./review.png";
 import styled from "styled-components";
+import Modal from "../components/modal.jsx";
 import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import Home from "./Home";
 import { useState } from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 
 const ProductDetail = () => {
   const StyledButton = styled.div`
@@ -19,6 +21,7 @@ const ProductDetail = () => {
     cursor: pointer;
   `;
   const [showReview, setShowReview] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <div className="container">
@@ -37,9 +40,40 @@ const ProductDetail = () => {
           <h2>
             <b style={{ fontSize: "20px" }}>인증샷을 부르는 춘식이 유리컵</b>
           </h2>
-          <h3>27,000원</h3>
+          <ul style={{ display: "flex" }}>
+            <li>
+              <div
+                style={{
+                  border: "0 solid",
+                  width: "100%",
+                  textAlign: "center",
+                }}
+              >
+                27,000원
+              </div>
+            </li>
+            <li>
+              <div
+              
+                onClick={() => {
+                  setShowModal(true);
+                }}
+                style={{
+                  cursor: "pointer",
+                  border: "0 solid",
+                  width: "140%",
+                  textAlign: "center",
+                  margin: "0 40%",
+                  padding: "6%",
+                  backgroundColor: "#24DBAF",
+                }}
+              >
+                장바구니 담기
+              </div>
+            </li>
+          </ul>
         </div>
-
+        {showModal ? <Modal /> : ""}
         <div className="product_explanation_img">
           <div className="review">
             <StyledButton
