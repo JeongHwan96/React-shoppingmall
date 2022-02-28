@@ -7,7 +7,7 @@ import modal from "./components/modal";
 import Data from "./data/Data";
 function App() {
   return (
-    <BrowserRouter basename="comento_shoppingmall">
+    <BrowserRouter basename="jeongkim.github.io">
       <Route path="/" exact component={Home} />
       <Route path="/product_detail" component={product_detail} />
       <Route path="/shopping_cart" component={shopping_cart} />
