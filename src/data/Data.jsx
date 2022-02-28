@@ -24,7 +24,7 @@ const Data = () => {
 
   return (
   <>
-    <p>Name: {DataName}</p>
+    <p>Name1: {DataName}</p>
   </>
   )
 };
