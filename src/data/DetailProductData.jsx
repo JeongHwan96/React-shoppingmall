@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Thumbnail from './Thumbnail'
+import DetailProduct from './DetailProduct'
 import axios from "axios";
 
 
@@ -26,7 +26,7 @@ const Data = () => {
   return (
   <>
   
-   <Thumbnail DataName={DataName} />
+   <DetailProduct DataName={DataName} />
   </>
   )
 };

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Thumbnail from './Thumbnail'
+import Thumbnail from './HomeThumbnail'
 import axios from "axios";
 
 

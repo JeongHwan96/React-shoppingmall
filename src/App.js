@@ -1,19 +1,17 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./page/Home";
-import product from "./page/product";
 import product_detail from "./page/ProductDetail";
-import shopping_cart from "./page/shopping_cart";
 import modal from "./components/modal";
 import Data from "./data/Data";
+import Cart from "./data/Cart";
 function App() {
   return (
-    <BrowserRouter basename="jeongkim.github.io">
+    <BrowserRouter>
       <Route path="/" exact component={Home} />
       <Route path="/product_detail" component={product_detail} />
-      <Route path="/shopping_cart" component={shopping_cart} />
       <Route path="/modal" component={modal} />
-      <Route path="/product" component={product} />
       <Route path="/data" component={Data} />
+      <Route path="/cart" component={Cart} />
     </BrowserRouter>
   );
 }

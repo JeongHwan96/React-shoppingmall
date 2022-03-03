@@ -22,7 +22,7 @@ h3 {
   color: #000000;
 }
 
-.container {
+.container1 {
   position: relative;
   height: 1000px;
 
@@ -124,9 +124,13 @@ h3 {
   .noactive {
     background-color: white;
   }
+
+  .main_product {
+    text-align: center;
+  }
 }
 
-@media screen and (min-width: 300px) and (max-width: 821px) {
+@media all and (min-width: 300px) and (max-width: 821px) {
   .header {
     width: 136%;
   }

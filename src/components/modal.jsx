@@ -6,7 +6,7 @@ const ProjectModal = ({ _handleModal }) => {
   return (
     <ModalFrame _handleModal={_handleModal}>
       <h1 style={{ color: "white" }}>정상적으로 담아졌습니다</h1>
-      <Link to="/data">
+      <Link to="/cart">
         {" "}
         <div style={{ color: "white" }}>장바구니로 가기</div>
       </Link>

@@ -1,14 +1,22 @@
-import exam2 from "./exam2.png";
 import Home from "./Home";
-import product_explanation from "./water.png";
-import product_explanation1 from "./water_desc.png";
-import Review from "./review.png";
-import styled from "styled-components";
-import Modal from "../components/modal.jsx";
-import { AiFillHome } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+
+/*이미지*/
+import exam2 from "./img/exam2.png";
+import product_explanation from "./img/water.png";
+import product_explanation1 from "./img/water_desc.png";
+import Review from "./img/review.png";
+import HomeData from "../data/Data";
+/* 스타일 컴포넌트 */
+import styled from "styled-components";
+
+/* 모달창 */
+import Modal from "../components/modal.jsx";
+
+/* 홈 아이콘 */
+import { AiFillHome } from "react-icons/ai";
 
 const ProductDetail = () => {
   const StyledButton = styled.div`
@@ -24,7 +32,7 @@ const ProductDetail = () => {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="header container-xl">
         <div className="header-title1" style={{ fontSize: "20px" }}>
           제품 상세
@@ -35,11 +43,8 @@ const ProductDetail = () => {
       </div>
 
       <div className="image">
-        <img className="exam2" src={exam2} alt="예시" />
+        <HomeData DataName={HomeData} />
         <div className="image_desc">
-          <h2>
-            <b style={{ fontSize: "20px" }}>인증샷을 부르는 춘식이 유리컵</b>
-          </h2>
           <ul style={{ display: "flex" }}>
             <li>
               <div
@@ -54,7 +59,6 @@ const ProductDetail = () => {
             </li>
             <li>
               <div
-              
                 onClick={() => {
                   setShowModal(true);
                 }}

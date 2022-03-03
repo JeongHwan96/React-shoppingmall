@@ -1,11 +1,23 @@
-import "../scss/style.scss";
-import { Swiper, SwiperSlide } from "swiper/react";
-//style
-import "swiper/swiper.scss";
 import { Link } from "react-router-dom";
-import exam from "./exam.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
+import { axios } from "axios";
+
+import HomeData from "../data/Data";
+import WinterData from "../data/HomeData";
+import { Navbar, Container, Nav } from "react-bootstrap";
+/* 이미지 */
+import exam from "./img/exam.png";
+import logo from "./img/logo3.png";
+import favicon from "./img/favicon.ico";
+
+/* css */
+import "../scss/style.scss";
+
+/* swiper */
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper.scss";
+
 const Home = () => {
   const ListButton = styled.li`
     text-align: center;
@@ -17,171 +29,87 @@ const Home = () => {
     margin-top: 40px;
   `;
   const [showItem, setShowItem] = useState(false);
+  const [winter, setWinter] = useState(false);
   const [showItem2, setShowItem2] = useState();
   const setShowItemFalse = () => {
     setShowItem(false);
     setShowItem2(false);
+    setWinter(false);
   };
   const setShowItemTrue = () => {
     setShowItem(true);
     setShowItem2(true);
+    setWinter(true);
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="header container-xl">
-        <div className="header-title">tomenco shopping</div>
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          navigation
-          pagination={{ clickable: true }}
+        <Navbar
+          bg="dark"
+          variant="dark"
+          style={{
+            position: "absolute",
+            width: "100%",
+            left: "0",
+            height: "10%",
+          }}
         >
-          <ul className="header-contents">
-            <SwiperSlide>
-              <ListButton
-                className={`${showItem ? "" : "active"} `}
-               
+          <Container>
+            <Link to="/">
+              <img
+                src={logo}
+                alt=""
+                style={{
+                  position: "absolute",
+                  width: "13%",
+                  left: "0",
+                  top: "0",
+                  marginTop: "-0.3%",
+                }}
+              />
+            </Link>
+            <Nav className="me-auto">
+              <Nav.Link
                 onClick={() => {
                   setShowItemFalse();
                 }}
+                style={{ fontSize: "2.5rem" }}
               >
-                # 겨울 방한템1
-              </ListButton>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <ListButton
-             className={`${showItem ? "active" : ""} `}
+                방한 물품
+              </Nav.Link>
+              <Nav.Link
                 onClick={() => {
                   setShowItemTrue();
                 }}
+                style={{ fontSize: "2.5rem" }}
               >
-                # 겨울 방한템2
-              </ListButton>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ListButton
-                onClick={() => {
-                  setShowItemFalse();
-                }}
-              >
-                # 겨울 방한템3
-              </ListButton>
-            </SwiperSlide>
-            <SwiperSlide>
-              <ListButton
-                onClick={() => {
-                  setShowItemTrue();
-                }}
-              >
-                # 겨울 방한템4
-              </ListButton>
-            </SwiperSlide>
-            <SwiperSlide>
-              <li className="winter btn btn-primary"># 겨울 방한템5</li>
-            </SwiperSlide>
-            <SwiperSlide>
-              <li className="winter btn btn-primary"># 겨울 방한템6</li>
-            </SwiperSlide>
-          </ul>
-        </Swiper>
+                캠핑 용품
+              </Nav.Link>
+              <Nav.Link style={{ fontSize: "2.5rem" }}>여름 용품</Nav.Link>
+            </Nav>
+          </Container>
+        </Navbar>
       </div>
 
       {showItem ? (
-        <div className="main_product">
-          <Link to="/product_detail">
-            <img className="exam" src={exam} alt="예시" />
+        <div
+          className="main_product"
+          style={{ width: "50%", margin: "0 auto" }}
+        >
+          <Link style={{ textDecoration: "none" }} to="/product_detail">
+            <WinterData DataName={WinterData} />
           </Link>
-          <div className="product_desc">
-            <h2>
-              <b>인증샷을 부르는 춘식이 유리컵1</b>
-            </h2>
-            <h3>
-              안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운 춘식이를
-              더한 , 금주의 추천 선물이에요
-            </h3>
-          </div>
         </div>
       ) : (
         <>
-          <div className="main_product">
-            <Link to="/product_detail">
-              <img className="exam" src={exam} alt="예시" />
+          <div
+            className="main_product"
+            style={{ width: "50%", margin: "0 auto" }}
+          >
+            <Link style={{ textDecoration: "none" }} to="/product_detail">
+              <HomeData DataName={HomeData} />
             </Link>
-            <div className="product_desc">
-              <h2>
-                <b>인증샷을 부르는 춘식이 유리컵1</b>
-              </h2>
-              <h3>
-                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
-                춘식이를 더한 , 금주의 추천 선물이에요
-              </h3>
-            </div>
-          </div>
-
-          <div className="main_product1">
-            <Link to="/product_detail">
-              <img className="exam1" src={exam} alt="예시" />
-            </Link>
-            <div className="product_desc1">
-              <h2>
-                <b>인증샷을 부르는 춘식이 유리컵1-1</b>
-              </h2>
-              <h3>
-                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
-                춘식이를 더한 , 금주의 추천 선물이에요
-              </h3>
-            </div>
-          </div>
-        </>
-      )}
-
-      {showItem2 ? (
-        <div className="main_product">
-          <Link to="/product_detail">
-            <img className="exam" src={exam} alt="예시" />
-          </Link>
-          <div className="product_desc">
-            <h2>
-              <b>인증샷을 부르는 춘식이 유리컵1</b>
-            </h2>
-            <h3>
-              안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운 춘식이를
-              더한 , 금주의 추천 선물이에요
-            </h3>
-          </div>
-        </div>
-      ) : (
-        <>
-          <div className="main_product">
-            <Link to="/product_detail">
-              <img className="exam" src={exam} alt="예시" />
-            </Link>
-            <div className="product_desc">
-              <h2>
-                <b>인증샷을 부르는 춘식이 유리컵1</b>
-              </h2>
-              <h3>
-                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
-                춘식이를 더한 , 금주의 추천 선물이에요
-              </h3>
-            </div>
-          </div>
-
-          <div className="main_product1">
-            <Link to="/product_detail">
-              <img className="exam1" src={exam} alt="예시" />
-            </Link>
-            <div className="product_desc1">
-              <h2>
-                <b>인증샷을 부르는 춘식이 유리컵1-1</b>
-              </h2>
-              <h3>
-                안정감있게 쌓을 수 있는 실용적인 디자인에<br></br> 귀여운
-                춘식이를 더한 , 금주의 추천 선물이에요
-              </h3>
-            </div>
           </div>
         </>
       )}
