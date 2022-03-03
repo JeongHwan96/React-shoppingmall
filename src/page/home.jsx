@@ -3,8 +3,6 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { axios } from "axios";
 
-import HomeData from "../data/Data";
-import WinterData from "../data/HomeData";
 import { Navbar, Container, Nav } from "react-bootstrap";
 /* 이미지 */
 import exam from "./img/exam.png";
@@ -97,9 +95,7 @@ const Home = () => {
           className="main_product"
           style={{ width: "50%", margin: "0 auto" }}
         >
-          <Link style={{ textDecoration: "none" }} to="/product_detail">
-            <WinterData DataName={WinterData} />
-          </Link>
+          <Link style={{ textDecoration: "none" }} to="/product_detail"></Link>
         </div>
       ) : (
         <>
@@ -107,9 +103,10 @@ const Home = () => {
             className="main_product"
             style={{ width: "50%", margin: "0 auto" }}
           >
-            <Link style={{ textDecoration: "none" }} to="/product_detail">
-              <HomeData DataName={HomeData} />
-            </Link>
+            <Link
+              style={{ textDecoration: "none" }}
+              to="/product_detail"
+            ></Link>
           </div>
         </>
       )}
