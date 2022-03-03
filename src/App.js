@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Route path="/" exact component={Home} />
-      <Route path="/product_detail" component={product_detail} />
+      <Route path="/product_detail/:productId" component={product_detail} />
       <Route path="/modal" component={modal} />
       <Route path="/data" component={Data} />
       <Route path="/cart" component={Cart} />

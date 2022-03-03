@@ -1,7 +1,9 @@
 import Home from "./Home";
-import { Link } from "react-router-dom";
-import { useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import { fetchProduct } from "../apis/shoppingApis";
+import Thumbnail from '../data/Thumbnail'
 
 /*이미지*/
 import exam2 from "./img/exam2.png";
@@ -18,8 +20,7 @@ import Modal from "../components/modal.jsx";
 /* 홈 아이콘 */
 import { AiFillHome } from "react-icons/ai";
 
-const ProductDetail = () => {
-  const StyledButton = styled.div`
+const StyledButton = styled.div`
     background: white;
     padding: 10px;
     margin: 10px;
@@ -28,8 +29,26 @@ const ProductDetail = () => {
     text-align: center;
     cursor: pointer;
   `;
+
+
+const ProductDetail = () => {
+
   const [showReview, setShowReview] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [product, setProduct] = useState(false);
+
+  // URL의 params
+  const params = useParams();
+
+  useEffect(() => {
+    getProduct(params.productId)
+  }, [])
+
+  const getProduct = async (productId) => {
+    const response = await fetchProduct(productId);
+    setProduct(response);
+
+  }
 
   return (
     <div className="container1">
@@ -43,7 +62,9 @@ const ProductDetail = () => {
       </div>
 
       <div className="image">
-        <HomeData DataName={HomeData} />
+        <Thumbnail DataName={product} />
+
+
         <div className="image_desc">
           <ul style={{ display: "flex" }}>
             <li>
