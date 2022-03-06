@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Home from "../page/HomePage";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
@@ -38,11 +38,12 @@ const ProductDetail = () => {
   const params = useParams();
 
   useEffect(() => {
-    getProduct(params.productId);
+    _fetchProductList(params.productId);
   }, []);
 
-  const getProduct = async (productId) => {
+  const _fetchProductList = async (productId) => {
     const response = await fetchProduct(productId);
+    console.log(response);
     setProduct(response);
   };
 
@@ -57,7 +58,15 @@ const ProductDetail = () => {
         </Link>
       </div>
 
-      <div className="image">
+      <div
+        className="image"
+        style={{
+          position: "relative",
+          textAlign: "center",
+          margin: "5% auto",
+        }}
+      >
+        <img src={product.thumbnail} alt="" style={{ width: "35%" }} />
         <div className="image_desc">
           <ul style={{ display: "flex" }}>
             <li>
@@ -66,9 +75,10 @@ const ProductDetail = () => {
                   border: "0 solid",
                   width: "100%",
                   textAlign: "center",
+                  fontSize: "3rem",
                 }}
               >
-                27,000원
+                {product.price}
               </div>
             </li>
             <li>
@@ -81,8 +91,8 @@ const ProductDetail = () => {
                   border: "0 solid",
                   width: "140%",
                   textAlign: "center",
-                  margin: "0 40%",
-                  padding: "6%",
+                  margin: "7% 40%",
+                  padding: "20%",
                   backgroundColor: "#24DBAF",
                 }}
               >
@@ -91,6 +101,7 @@ const ProductDetail = () => {
             </li>
           </ul>
         </div>
+
         {showModal ? <Modal /> : ""}
         <div className="product_explanation_img">
           <div className="review">
@@ -110,13 +121,7 @@ const ProductDetail = () => {
           {showReview ? (
             <img className="exam4" src={Review} alt="예시" />
           ) : (
-            <img className="exam3" src={product_explanation} alt="예시" />
-          )}
-
-          {showReview ? (
-            <img className="exam4" src={Review} alt="예시" />
-          ) : (
-            <img className="exam3" src={product_explanation1} alt="예시" />
+            <img className="exam3" src={product.thumbnail} alt="예시" />
           )}
         </div>
       </div>

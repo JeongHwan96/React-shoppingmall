@@ -2,6 +2,11 @@
   list-style: none;
 }
 
+a {
+  text-decoration: none !important;
+  color: #337ab7 !important;
+}
+
 h2 {
   font-family: Noto Sans CJK KR;
   font-style: normal;
@@ -76,7 +81,7 @@ h3 {
 
   .review {
     display: flex;
-    transform: translate(76%, 1100%);
+    transform: translate(76%, 200%);
   }
 
   // product_detail
@@ -95,20 +100,20 @@ h3 {
     }
     .image_desc {
       position: absolute;
-      top: 60%;
-      left: 50%;
+
+      left: 42%;
       transform: translate(-90%, 60%);
     }
   }
   .product_explanation_img {
     width: 40%;
     .exam3 {
-      width: 97%;
-      transform: translate(79%, 120%);
+      width: 75%;
+      margin: 30% 0 0 87%;
     }
     .exam4 {
-      width: 97%;
-      transform: translate(79%, 620%);
+      width: 75%;
+      margin: 30% 0 0 85%;
     }
   }
   .Home {
