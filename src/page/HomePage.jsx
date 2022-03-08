@@ -89,6 +89,9 @@ const Home = () => {
                 }}
               />
             </Link>
+            <Link to="/cart">
+             장바구니
+            </Link>
             <Nav className="me-auto">
               <Nav.Link
                 onClick={() => {

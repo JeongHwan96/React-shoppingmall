@@ -33,9 +33,18 @@ const ProductDetail = () => {
   const [showReview, setShowReview] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [product, setProduct] = useState(false);
+  const [count, setCount] = useState(1);
 
   // URL의 params
   const params = useParams();
+
+  const UpCount = () => {
+    setCount(count+1);
+  }
+
+  const DownCount = () => {
+    setCount(count-1);
+  }
 
   useEffect(() => {
     _fetchProductList(params.productId);
@@ -69,7 +78,7 @@ const ProductDetail = () => {
         <img src={product.thumbnail} alt="" style={{ width: "35%" }} />
         <div className="image_desc">
           <ul style={{ display: "flex" }}>
-            <li>
+            <li style={{paddingRight:"10%"}}>
               <div
                 style={{
                   border: "0 solid",
@@ -81,10 +90,22 @@ const ProductDetail = () => {
                 {product.price}
               </div>
             </li>
+
+            <li style={{display:"flex",paddingRight:"5%"}}>
+            <input type="button" value="-" style={{fontSize:"2rem"}} onClick={DownCount}/>
+            <div style={{ margin:"10%",fontSize:"2rem"}}>{count}</div>
+            <input type="button" value="+" style={{fontSize:"2rem"}} onClick={UpCount}/>
+            </li>
+
             <li>
               <div
                 onClick={() => {
                   setShowModal(true);
+                  sessionStorage.setItem("price", product.price);
+                  sessionStorage.setItem("image",product.thumbnail);
+                  sessionStorage.setItem("name",product.name);
+                  sessionStorage.setItem("count",count)
+                 
                 }}
                 style={{
                   cursor: "pointer",

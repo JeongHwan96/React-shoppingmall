@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const ProductCard = ({ product }) => {
   const { id, name, thumbnail, price } = product;
   return (
-    <div>
+    <div style={{borderBottom:"2px solid black", paddingBottom:"10%"}}>
       <Link to={`/product_detail/${id}`}>
         <img
           src={thumbnail}

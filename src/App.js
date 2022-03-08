@@ -1,6 +1,7 @@
 import { BrowserRouter, Route } from "react-router-dom";
 import Home from "./page/HomePage";
 import product_detail from "./page/ProductDetail";
+import Cart from "./page/Cart";
 import modal from "./components/modal";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <BrowserRouter basename="jeongkim.github.io">
       <Route path="/" exact component={Home} />
       <Route path="/product_detail/:productId" component={product_detail} />
+      <Route path="/cart" component={Cart} />
       <Route path="/modal" component={modal} />
     </BrowserRouter>
   );

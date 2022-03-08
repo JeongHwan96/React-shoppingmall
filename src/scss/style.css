@@ -1,5 +1,7 @@
 * { list-style: none; }
 
+a { text-decoration: none !important; color: #337ab7 !important; }
+
 h2 { font-family: Noto Sans CJK KR; font-style: normal; font-weight: bold; font-size: 30px !important; line-height: 26px; letter-spacing: -0.01em; color: #000000; }
 
 h3 { font-family: Noto Sans CJK KR; font-style: normal; font-weight: normal; font-size: 16px !important; line-height: 21px; letter-spacing: -0.01em; color: #000000; }
@@ -20,19 +22,19 @@ h3 { font-family: Noto Sans CJK KR; font-style: normal; font-weight: normal; fon
 
 .container1 .main_product .product_desc1, .container1 .main_product1 .product_desc1 { position: absolute; left: 55.11%; right: 0; top: 64.09%; bottom: 17.23%; }
 
-.container1 .review { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-transform: translate(76%, 1100%); transform: translate(76%, 1100%); }
+.container1 .review { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-transform: translate(76%, 200%); transform: translate(76%, 200%); }
 
 .container1 .header-title1 { text-align: center; font-size: 2rem; }
 
 .container1 .image .exam2 { position: absolute; width: 38%; top: 30%; left: 50%; -webkit-transform: translate(-50%, -40%); transform: translate(-50%, -40%); }
 
-.container1 .image .image_desc { position: absolute; top: 60%; left: 50%; -webkit-transform: translate(-90%, 60%); transform: translate(-90%, 60%); }
+.container1 .image .image_desc { position: absolute; left: 45%; width: 20%; margin: 1% 0 0 -13%; }
 
 .container1 .product_explanation_img { width: 40%; }
 
-.container1 .product_explanation_img .exam3 { width: 97%; -webkit-transform: translate(79%, 120%); transform: translate(79%, 120%); }
+.container1 .product_explanation_img .exam3 { width: 75%; margin: 30% 0 0 87%; }
 
-.container1 .product_explanation_img .exam4 { width: 97%; -webkit-transform: translate(79%, 620%); transform: translate(79%, 620%); }
+.container1 .product_explanation_img .exam4 { width: 75%; margin: 30% 0 0 85%; }
 
 .container1 .Home { position: absolute; left: 31%; top: 1%; cursor: pointer; color: black; }
 
