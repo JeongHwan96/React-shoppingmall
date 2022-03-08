@@ -1,11 +1,23 @@
+import { useState, useEffect } from "react";
 import { Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 function Cart() {
-    const count = sessionStorage.getItem("count")
-    const price = sessionStorage.getItem("price")
-    const name = sessionStorage.getItem("name")
-    const total = count * price
+
+  const [cart, setCart] = useState();
+  // TODO: 장바구니 상품의 총 가격 계산하는 로직을 구현해보세요!
+  const [totalPrice, setTotalPrice] = useState(0);
+
+  // Cart 페이지가 만들어질 때, 한번만 실행
+  useEffect(() => {
+    // 스토리지에서 장바구니 정보 불러옴
+    const cart = sessionStorage.getItem("cart");
+    // 있으면 cart state에 담아줌
+    if (cart) {
+      setCart(JSON.parse(cart));
+    }
+  }, []);
+
   return (
       <>
 <button><Link to="/">메인화면</Link></button>
@@ -20,13 +32,14 @@ function Cart() {
     </tr>
   </thead>
   <tbody>
-    <tr>
-    <th><input type="checkbox"/></th>
-      <td><img src={sessionStorage.getItem("image")} alt="" style={{width:"20%"}} /></td>
-      <td>{name}</td>
-      <td>{count}</td>
-      <td>{price}*{count}</td>
-    </tr>
+    {/* Map으로 하나씩 출력 */}
+    {cart && cart.map(cartItem => <tr>
+      <th><input type="checkbox" /></th>
+      <td><img src={cartItem.product.thumbnail} alt="" style={{ width: "20%" }} /></td>
+      <td>{cartItem.product.name}</td>
+      <td>{cartItem.count}</td>
+      <td>{cartItem.product.price}*{cartItem.count}</td>
+    </tr>)}
     <tr>
     <th><input type="checkbox"/></th>
       <td>Jacob</td>
@@ -45,7 +58,7 @@ function Cart() {
       <td>@twitter</td>
     </tr>
     <tr>
-      <td colSpan={5}>총 가격:{price}</td>
+      <td colSpan={5}>총 가격:{totalPrice}</td>
     </tr>
   </tbody>
 </Table>

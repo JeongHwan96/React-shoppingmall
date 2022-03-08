@@ -56,6 +56,23 @@ const ProductDetail = () => {
     setProduct(response);
   };
 
+  const addProductToCart = (product, count) => {
+    setShowModal(true);
+    // object Array 형태로 만들어서 넣어주세요.
+    let cart = [];
+
+    // 이미 카트에 저장된 상품이 있으면, 불러와서 cart에 담기
+    const cartStr = sessionStorage.getItem("cart");
+    if (cartStr) {
+      cart = JSON.parse(cartStr);
+    }
+
+    // cart에 신규 상품 추가 
+    cart.push({ product: product, count: count });
+    // 스토리지에 저장
+    sessionStorage.setItem("cart", JSON.stringify(cart))
+  }
+
   return (
     <div className="container1">
       <div className="header container-xl">
@@ -99,14 +116,7 @@ const ProductDetail = () => {
 
             <li>
               <div
-                onClick={() => {
-                  setShowModal(true);
-                  sessionStorage.setItem("price", product.price);
-                  sessionStorage.setItem("image",product.thumbnail);
-                  sessionStorage.setItem("name",product.name);
-                  sessionStorage.setItem("count",count)
-                 
-                }}
+                onClick={() => addProductToCart(product, count)}
                 style={{
                   cursor: "pointer",
                   border: "0 solid",
