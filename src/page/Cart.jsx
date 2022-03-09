@@ -15,9 +15,13 @@ function Cart() {
     // 있으면 cart state에 담아줌
     if (cart) {
       setCart(JSON.parse(cart));
+      setTotalPrice(JSON.stringify(cart))
+      console.log(totalPrice)
     }
+    
   }, []);
 
+ 
   return (
       <>
 <button><Link to="/">메인화면</Link></button>

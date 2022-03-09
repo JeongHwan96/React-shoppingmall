@@ -89,9 +89,9 @@ const Home = () => {
                 }}
               />
             </Link>
-            <Link to="/cart">
+            {/* <Link to="/cart">
              장바구니
-            </Link>
+            </Link> */}
             <Nav className="me-auto">
               <Nav.Link
                 onClick={() => {
@@ -134,11 +134,11 @@ const Home = () => {
             className="main_product"
             style={{ width: "50%", margin: "0 auto", paddingTop: "100px" }}
           >
-            {/* <Link to="/ProductDetail" style={{ textDecoration: "none" }}>
+            <Link to="/ProductDetail" style={{ textDecoration: "none" }}>
               {campingproducts.map((campingproduct) => (
                 <CapmingProductCard campingproduct={campingproduct} />
               ))}
-            </Link> */}
+            </Link>
           </div>
         </>
       )}
