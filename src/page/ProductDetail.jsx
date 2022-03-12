@@ -8,7 +8,9 @@ import { fetchProduct } from "../apis/shoppingApis";
 import exam2 from "./img/exam2.png";
 import product_explanation from "./img/water.png";
 import product_explanation1 from "./img/water_desc.png";
-import Review from "./img/review.png";
+
+/*리뷰*/
+import Review from "../components/Review";
 
 /* 스타일 컴포넌트 */
 import styled from "styled-components";
@@ -39,12 +41,12 @@ const ProductDetail = () => {
   const params = useParams();
 
   const UpCount = () => {
-    setCount(count+1);
-  }
+    setCount(count + 1);
+  };
 
   const DownCount = () => {
-    setCount(count-1);
-  }
+    setCount(count - 1);
+  };
 
   useEffect(() => {
     _fetchProductList(params.productId);
@@ -67,11 +69,11 @@ const ProductDetail = () => {
       cart = JSON.parse(cartStr);
     }
 
-    // cart에 신규 상품 추가 
+    // cart에 신규 상품 추가
     cart.push({ product: product, count: count });
     // 스토리지에 저장
-    sessionStorage.setItem("cart", JSON.stringify(cart))
-  }
+    sessionStorage.setItem("cart", JSON.stringify(cart));
+  };
 
   return (
     <div className="container1">
@@ -95,7 +97,7 @@ const ProductDetail = () => {
         <img src={product.thumbnail} alt="" style={{ width: "35%" }} />
         <div className="image_desc">
           <ul style={{ display: "flex" }}>
-            <li style={{paddingRight:"10%"}}>
+            <li style={{ paddingRight: "10%" }}>
               <div
                 style={{
                   border: "0 solid",
@@ -108,10 +110,20 @@ const ProductDetail = () => {
               </div>
             </li>
 
-            <li style={{display:"flex",paddingRight:"5%"}}>
-            <input type="button" value="-" style={{fontSize:"2rem"}} onClick={DownCount}/>
-            <div style={{ margin:"10%",fontSize:"2rem"}}>{count}</div>
-            <input type="button" value="+" style={{fontSize:"2rem"}} onClick={UpCount}/>
+            <li style={{ display: "flex", paddingRight: "5%" }}>
+              <input
+                type="button"
+                value="-"
+                style={{ fontSize: "2rem" }}
+                onClick={DownCount}
+              />
+              <div style={{ margin: "10%", fontSize: "2rem" }}>{count}</div>
+              <input
+                type="button"
+                value="+"
+                style={{ fontSize: "2rem" }}
+                onClick={UpCount}
+              />
             </li>
 
             <li>
@@ -150,7 +162,7 @@ const ProductDetail = () => {
             </StyledButton>
           </div>
           {showReview ? (
-            <img className="exam4" src={Review} alt="예시" />
+            <Review />
           ) : (
             <img className="exam3" src={product.thumbnail} alt="예시" />
           )}

@@ -5,6 +5,7 @@ import { axios } from "axios";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import ProductCard from "../data/ProductCard";
 import CapmingProductCard from "../data/CapmingProductCard";
+import { Row, Col } from "react-bootstrap";
 
 /* 이미지 */
 import exam from "./img/exam.png";
@@ -114,8 +115,7 @@ const Home = () => {
           </Container>
         </Navbar>
       </div>
-
-      {products ? (
+      {products && (
         <>
           <div
             className="main_product"
@@ -128,7 +128,9 @@ const Home = () => {
             </Link>
           </div>
         </>
-      ) : (
+      )}
+
+      {campingproducts && (
         <>
           <div
             className="main_product"
@@ -142,6 +144,20 @@ const Home = () => {
           </div>
         </>
       )}
+      {/* ) : (
+      <>
+        <div
+          className="main_product"
+          style={{ width: "50%", margin: "0 auto", paddingTop: "100px" }}
+        >
+          <Link to="/ProductDetail" style={{ textDecoration: "none" }}>
+            {campingproducts.map((campingproduct) => (
+              <CapmingProductCard campingproduct={campingproduct} />
+            ))}
+          </Link>
+        </div>
+      </>
+      )} */}
     </div>
   );
 };
