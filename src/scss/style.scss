@@ -7,6 +7,10 @@ a {
   color: #337ab7 !important;
 }
 
+tr {
+  text-align: center;
+}
+
 h2 {
   font-family: Noto Sans CJK KR;
   font-style: normal;
@@ -81,7 +85,7 @@ h3 {
 
   .review {
     display: flex;
-    transform: translate(76%, 200%);
+    transform: translate(76%, 300%);
   }
 
   // product_detail
@@ -133,6 +137,13 @@ h3 {
   .main_product {
     text-align: center;
   }
+}
+
+/*모달창*/
+.modalbutton:hover {
+  background-color: #eee;
+  color: black !important;
+  transition: 0.5s;
 }
 
 @media all and (min-width: 300px) and (max-width: 821px) {

@@ -4,6 +4,14 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { fetchProduct } from "../apis/shoppingApis";
 
+/*material-UI*/
+import * as React from "react";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+
 /*이미지*/
 import exam2 from "./img/exam2.png";
 import product_explanation from "./img/water.png";
@@ -75,6 +83,13 @@ const ProductDetail = () => {
     sessionStorage.setItem("cart", JSON.stringify(cart));
   };
 
+  const [productOption, setProductOption] = React.useState("");
+
+  const handleChange = (event) => {
+    setProductOption(event.target.value);
+    console.log(event);
+  };
+
   return (
     <div className="container1">
       <div className="header container-xl">
@@ -143,6 +158,22 @@ const ProductDetail = () => {
               </div>
             </li>
           </ul>
+          <Box sx={{ minWidth: 120 }}>
+            <FormControl fullWidth>
+              <InputLabel id="demo-simple-select-label">상품옵션</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={productOption}
+                label="상품옵션"
+                onChange={handleChange}
+              >
+                <MenuItem value={10}>10. 10cm 방수패드</MenuItem>
+                <MenuItem value={20}>20. 휴대용 난로</MenuItem>
+                <MenuItem value={30}>30. 장작</MenuItem>
+              </Select>
+            </FormControl>
+          </Box>
         </div>
 
         {showModal ? <Modal /> : ""}

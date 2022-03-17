@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { Container, Row, Col } from "react-bootstrap";
 const ProductCard = ({ product }) => {
   const { id, name, thumbnail, price } = product;
   return (
-    <div style={{borderBottom:"2px solid black", paddingBottom:"10%"}}>
+    <div style={{ borderBottom: "2px solid black", paddingBottom: "10%" }}>
       <Link to={`/product_detail/${id}`}>
         <img
           src={thumbnail}

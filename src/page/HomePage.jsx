@@ -115,11 +115,16 @@ const Home = () => {
           </Container>
         </Navbar>
       </div>
+
       {products && (
         <>
           <div
             className="main_product"
-            style={{ width: "50%", margin: "0 auto", paddingTop: "100px" }}
+            style={{
+              width: "50%",
+              margin: "0 auto",
+              paddingTop: "100px",
+            }}
           >
             <Link to="/ProductDetail" style={{ textDecoration: "none" }}>
               {products.map((product) => (
@@ -134,7 +139,11 @@ const Home = () => {
         <>
           <div
             className="main_product"
-            style={{ width: "50%", margin: "0 auto", paddingTop: "100px" }}
+            style={{
+              width: "50%",
+              margin: "0 auto",
+              paddingTop: "100px",
+            }}
           >
             <Link to="/ProductDetail" style={{ textDecoration: "none" }}>
               {campingproducts.map((campingproduct) => (

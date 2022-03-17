@@ -33,5 +33,5 @@ export const fetchCampingProduct = (campingproductsId) => {
     .get(
       `https://f94836e9-9f51-4d28-82bd-9af8ad671717.mock.pstmn.io/campingproducts/${campingproductsId}`
     )
-    .then((response) => response.data.winter);
+    .then((response) => response.data.capming);
 };
