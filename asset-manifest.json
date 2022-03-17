@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/React-shoppingmall/static/css/main.cc8e81cd.css",
+    "main.js": "/React-shoppingmall/static/js/main.5a17cacb.js",
+    "static/js/787.47dce7fb.chunk.js": "/React-shoppingmall/static/js/787.47dce7fb.chunk.js",
+    "static/media/water_desc.png": "/React-shoppingmall/static/media/water_desc.60ad3ee591e30c03e0bd.png",
+    "static/media/exam2.png": "/React-shoppingmall/static/media/exam2.62b4759557754a8b727a.png",
+    "static/media/water.png": "/React-shoppingmall/static/media/water.2b8462228eb2d399f222.png",
+    "static/media/exam.png": "/React-shoppingmall/static/media/exam.4aaefb385b744c850134.png",
+    "static/media/favicon.ico": "/React-shoppingmall/static/media/favicon.967c894bcec626411ccf.ico",
+    "static/media/logo3.png": "/React-shoppingmall/static/media/logo3.69f4fe8ea3614cc87b26.png",
+    "index.html": "/React-shoppingmall/index.html",
+    "main.cc8e81cd.css.map": "/React-shoppingmall/static/css/main.cc8e81cd.css.map",
+    "main.5a17cacb.js.map": "/React-shoppingmall/static/js/main.5a17cacb.js.map",
+    "787.47dce7fb.chunk.js.map": "/React-shoppingmall/static/js/787.47dce7fb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cc8e81cd.css",
+    "static/js/main.5a17cacb.js"
+  ]
+}
