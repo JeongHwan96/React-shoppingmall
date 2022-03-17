@@ -6,7 +6,7 @@ import modal from "./components/modal";
 
 function App() {
   return (
-    <BrowserRouter basename="jeongkim.github.io">
+    <BrowserRouter basename="React-shoppingmall">
       <Route path="/" exact component={Home} />
       <Route path="/product_detail/:productId" component={product_detail} />
       <Route path="/cart" component={Cart} />
