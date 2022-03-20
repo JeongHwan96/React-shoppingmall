@@ -41,6 +41,10 @@
 
 ## Develop History 📜
 
+2022-03-20
+- 메인 화면에 Bootstrap을 이용하여 Sign in, Sign Up 버튼 생성
+- Sign Up 버튼 클릭시 Modal 창 
+
 2022-02-22
 
 - 장바구니 화면에 BootStrap Table을 사용하여 화면 구성
