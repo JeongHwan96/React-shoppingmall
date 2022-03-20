@@ -3,6 +3,8 @@ import Home from "./page/HomePage";
 import product_detail from "./page/ProductDetail";
 import Cart from "./page/Cart";
 import modal from "./components/modal";
+import Register from "./page/Register";
+import Layout from "./page/layouts/Layout";
 
 function App() {
   return (
@@ -11,6 +13,8 @@ function App() {
       <Route path="/product_detail/:productId" component={product_detail} />
       <Route path="/cart" component={Cart} />
       <Route path="/modal" component={modal} />
+      <Route path="/Register" component={Register} />
+      <Route path="/Layout" component={Layout} />
     </BrowserRouter>
   );
 }

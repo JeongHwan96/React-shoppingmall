@@ -147,7 +147,7 @@ const ProductDetail = () => {
                 style={{
                   cursor: "pointer",
                   border: "0 solid",
-                  width: "140%",
+                  width: "240%",
                   textAlign: "center",
                   margin: "7% 40%",
                   padding: "20%",

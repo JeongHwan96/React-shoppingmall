@@ -5,6 +5,7 @@ import { axios } from "axios";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import ProductCard from "../data/ProductCard";
 import CapmingProductCard from "../data/CapmingProductCard";
+import Header from "./layouts/Header";
 import { Row, Col } from "react-bootstrap";
 
 /* 이미지 */
@@ -77,6 +78,7 @@ const Home = () => {
           }}
         >
           <Container>
+            <Header />
             <Link to="/">
               <img
                 src={logo}
