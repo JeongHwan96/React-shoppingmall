@@ -41,6 +41,10 @@
 
 ## Develop History 📜
 
+2022-03-22
+- Sign in, Sign Up 내용 추가 및 수정
+- 회원가입 기능 구현 (진행중)
+
 2022-03-20
 - 메인 화면에 Bootstrap을 이용하여 Sign in, Sign Up 버튼 생성
 - Sign Up 버튼 클릭시 Modal 창 
