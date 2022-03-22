@@ -2,7 +2,7 @@ import React from "react";
 import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import HorizonLine from "../../components/HorizonLine";
-const SignupModal = ({ show, onHide }) => {
+const SignInModal = ({ show, onHide }) => {
   return (
     <Modal
       style={{ opacity: "1" }}
@@ -20,36 +20,14 @@ const SignupModal = ({ show, onHide }) => {
         </Modal.Header>
         <Modal.Body>
           <Form>
-            <Form.Group className="mb-3" controlId="formBasicNAME">
-              <Form.Label>NAME</Form.Label>
-              <Form.Control type="text" placeholder="Enter Your NAME" />
-            </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicId">
               <Form.Label>ID</Form.Label>
               <Form.Control type="text" placeholder="Enter Your ID" />
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
-              <Form.Text className="text-muted">
-                We'll never share your email with anyone else.
-              </Form.Text>
-            </Form.Group>
-
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" placeholder="Password" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label>Comfirm Password</Form.Label>
-              <Form.Control type="password" placeholder="Comfirm Password" />
-            </Form.Group>
-
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
-              <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
 
             <Button
@@ -59,7 +37,7 @@ const SignupModal = ({ show, onHide }) => {
               className="my-3"
               style={{ width: "100%" }}
             >
-              Sign Up
+              Sign In
             </Button>
             <HorizonLine text={"OR"} />
             <GoogleLogin
@@ -75,7 +53,7 @@ const SignupModal = ({ show, onHide }) => {
                       width: "100%",
                     }}
                   >
-                    <i className="fab fa-google"></i>&nbsp; Sign Up with Google
+                    <i className="fab fa-google"></i>&nbsp; Sign In with Google
                   </Button>
                 );
               }}
@@ -94,4 +72,4 @@ const SignupModal = ({ show, onHide }) => {
   );
 };
 
-export default SignupModal;
+export default SignInModal;
