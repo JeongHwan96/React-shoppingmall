@@ -41,6 +41,12 @@
 
 ## Develop History 📜
 
+2022-03-23
+- Sign in, Sign Up 유효성 검사 구현
+- Sign Up 클릭시 회원가입 되었다는 alert창 출력
+- LocalStorage에 정보 저장
+- Login 기능 구현 (진행중)
+
 2022-03-22
 - Sign in, Sign Up 내용 추가 및 수정
 - 회원가입 기능 구현 (진행중)
