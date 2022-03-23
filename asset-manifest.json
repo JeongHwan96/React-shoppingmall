@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React-shoppingmall/static/css/main.440ae986.css",
-    "main.js": "/React-shoppingmall/static/js/main.cd812122.js",
+    "main.js": "/React-shoppingmall/static/js/main.880f0fec.js",
     "static/js/787.47dce7fb.chunk.js": "/React-shoppingmall/static/js/787.47dce7fb.chunk.js",
     "static/media/water_desc.png": "/React-shoppingmall/static/media/water_desc.60ad3ee591e30c03e0bd.png",
     "static/media/exam2.png": "/React-shoppingmall/static/media/exam2.62b4759557754a8b727a.png",
@@ -11,11 +11,11 @@
     "static/media/logo3.png": "/React-shoppingmall/static/media/logo3.69f4fe8ea3614cc87b26.png",
     "index.html": "/React-shoppingmall/index.html",
     "main.440ae986.css.map": "/React-shoppingmall/static/css/main.440ae986.css.map",
-    "main.cd812122.js.map": "/React-shoppingmall/static/js/main.cd812122.js.map",
+    "main.880f0fec.js.map": "/React-shoppingmall/static/js/main.880f0fec.js.map",
     "787.47dce7fb.chunk.js.map": "/React-shoppingmall/static/js/787.47dce7fb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.440ae986.css",
-    "static/js/main.cd812122.js"
+    "static/js/main.880f0fec.js"
   ]
 }
