@@ -1,8 +1,58 @@
-import React from "react";
+import { React, useState } from "react";
 import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import HorizonLine from "../../components/HorizonLine";
-const SignInModal = ({ show, onHide }) => {
+import styled from "@emotion/styled";
+const Error = styled.div`
+  color: red;
+`;
+
+const SigninModal = ({ show, onHide }) => {
+  const [name, setName] = useState("");
+  const [nameError, setNameError] = useState("");
+  const [id, setId] = useState("");
+  const [idError, setIdError] = useState("");
+  const [email, setEmail] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmpassword] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+
+  const onChangeid = (e) => {
+    setId(e.target.value);
+    if (e.target.value !== "") {
+      setIdError("");
+    }
+  };
+
+  const onChangepassword = (e) => {
+    setPassword(e.target.value);
+    if (e.target.value === confirmpassword) {
+      setPasswordError("");
+    } else if (e.target.value !== "") {
+      setPasswordError("");
+    }
+  };
+
+  const onClickLogin = () => {
+    if (id === "") {
+      setIdError("Please enter your id in the id input field");
+    }
+
+    if (password === "") {
+      setPasswordError(
+        "Please enter your password in the password input field"
+      );
+    }
+
+    if (
+      id === localStorage.getItem("userinfo".id) &&
+      password === localStorage.getItem("userinfo".password)
+    ) {
+      alert("Congratulations, you have signed up");
+    }
+  };
+
   return (
     <Modal
       style={{ opacity: "1" }}
@@ -15,29 +65,43 @@ const SignInModal = ({ show, onHide }) => {
       <Container>
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            <h4>Sign Up</h4>
+            <h4>Sign In</h4>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
             <Form.Group className="mb-3" controlId="formBasicId">
               <Form.Label>ID</Form.Label>
-              <Form.Control type="text" placeholder="Enter Your ID" />
+              <Form.Control
+                type="text"
+                placeholder="Enter Your ID"
+                onChange={onChangeid}
+              />
+              <Error>{idError}</Error>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                type="password"
+                placeholder="Password"
+                onChange={onChangepassword}
+              />
+              <Error>{passwordError}</Error>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+              <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
 
             <Button
-              block
               variant="info"
               type="button"
               className="my-3"
               style={{ width: "100%" }}
+              onClick={onClickLogin}
             >
-              Sign In
+              Sign Up
             </Button>
             <HorizonLine text={"OR"} />
             <GoogleLogin
@@ -46,7 +110,6 @@ const SignInModal = ({ show, onHide }) => {
                   <Button
                     onClick={renderProps.onClick}
                     disabled={renderProps.disabled}
-                    block
                     style={{
                       backgroundColor: "#176BEF",
                       borderColor: "#176BEF",
@@ -72,4 +135,4 @@ const SignInModal = ({ show, onHide }) => {
   );
 };
 
-export default SignInModal;
+export default SigninModal;
