@@ -1,8 +1,11 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import { Modal, Button, Form, Container } from "react-bootstrap";
 import { GoogleLogin } from "react-google-login";
 import HorizonLine from "../../components/HorizonLine";
 import styled from "@emotion/styled";
+import { useHistory } from "react-router";
+import { HistoryOutlined } from "@material-ui/icons";
 const Error = styled.div`
   color: red;
 `;
@@ -17,6 +20,9 @@ const SigninModal = ({ show, onHide }) => {
   const [password, setPassword] = useState("");
   const [confirmpassword, setConfirmpassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const origin_data = JSON.parse(localStorage.getItem("userinfo"));
+
+  const history = useHistory();
 
   const onChangeid = (e) => {
     setId(e.target.value);
@@ -45,11 +51,14 @@ const SigninModal = ({ show, onHide }) => {
       );
     }
 
-    if (
-      id === localStorage.getItem("userinfo".id) &&
-      password === localStorage.getItem("userinfo".password)
-    ) {
+    if (id === origin_data.id && password === origin_data.password) {
       alert("Congratulations, you have signed up");
+      history.push("/cart");
+      Location.reload();
+    } else {
+      alert("oops");
+      console.log(id);
+      console.log(password);
     }
   };
 
